@@ -1,3 +1,5 @@
+import random
+
 # an array of state dictionaries
 states = [
 {
@@ -151,3 +153,23 @@ states = [
     "name": "Wyoming",
     "capital": "Cheyenne"
 }]
+
+score = 0
+def game(score):
+    random.shuffle(states)
+    for state in states:
+        user_answer = input('What is the capital city of ' + state["name"] + ":")
+        if user_answer == state["capital"]:
+            print('You are correct!')
+            score += 1
+            print(score)
+        else:
+            print("You are wrong boooo")
+    play_again = input('Do you want to play another game? (Y/N): ')
+    if play_again == 'Y':
+        score = game(score)
+        return score
+    else:
+        return score
+score = game(score)
+print("your score was: " + score)
