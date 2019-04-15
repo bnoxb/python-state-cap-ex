@@ -171,5 +171,6 @@ def game(score):
         return score
     else:
         return score
+        
 score = game(score)
-print("your score was: " + score)
+print("your score was: ", score)
